@@ -51,6 +51,12 @@ static void _addFullscreenAttributes(Vector<NSOpenGLPixelFormatAttribute>& attri
    attributes.push_back(NSOpenGLPFAFullScreen);
 }
 
+static void _addOpenGLVersion(Vector<NSOpenGLPixelFormatAttribute>& attributes)
+{
+    attributes.push_back(NSOpenGLPFAOpenGLProfile);   attributes.push_back(NSOpenGLProfileVersionLegacy);
+    //attributes.push_back(NSOpenGLProfileVersion3_2Core); // TODO OPENGL NSOpenGLProfileVersion3_2Core cause error
+}
+
 static void _endAttributeList(Vector<NSOpenGLPixelFormatAttribute>& attributes)
 {
    attributes.push_back((NSOpenGLPixelFormatAttribute)0);
@@ -59,7 +65,8 @@ static void _endAttributeList(Vector<NSOpenGLPixelFormatAttribute>& attributes)
 static Vector<NSOpenGLPixelFormatAttribute> _createStandardPixelFormatAttributesForDisplay(CGDirectDisplayID display)
 {
    Vector<NSOpenGLPixelFormatAttribute> attributes = _beginPixelFormatAttributesForDisplay(display);
-   _addColorAlphaDepthStencilAttributes(attributes, 24, 8, 24, 8);
+    _addOpenGLVersion(attributes);
+    _addColorAlphaDepthStencilAttributes(attributes, 24, 8, 24, 8);
    _endAttributeList(attributes);
    
    return attributes;
@@ -71,7 +78,6 @@ static NSOpenGLPixelFormat* _createStandardPixelFormat()
    Vector<NSOpenGLPixelFormatAttribute> attributes = _createStandardPixelFormatAttributesForDisplay(kCGDirectMainDisplay);
  
    NSOpenGLPixelFormat* fmt = [[NSOpenGLPixelFormat alloc] initWithAttributes:attributes.address()];
-
    return fmt;
 }
 

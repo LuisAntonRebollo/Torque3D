@@ -28,6 +28,7 @@
 #include "core/stringTable.h"
 #include "core/strings/stringFunctions.h"
 
+#define FMGetFontFromATSFontRef(x) ((ATSUFontID) x)
 
 //------------------------------------------------------------------------------
 // New Unicode capable font class.

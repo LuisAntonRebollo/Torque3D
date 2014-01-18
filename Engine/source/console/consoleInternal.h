@@ -340,7 +340,8 @@ public:
       };
 
       #pragma warning( pop ) // C4201
-
+      friend class Dictionary;
+      
    public:
 
       Entry(StringTableEntry name);

@@ -115,9 +115,10 @@ void GetBasePath(const char** cpath, const char** cname)
    if (! err ) {
 
       FSSpec fss2;
-
-      strcpy(name, &pspec.name[1]);
-
+      int length = pspec.name[0];
+      strcpy(name, (const char*)&pspec.name[1]);
+      name[length] = NULL;
+      
       err = FSMakeFSSpec(pspec.vRefNum, pspec.parID, 0, &fss2);
 
       if ( ! err ) {
@@ -160,7 +161,7 @@ int main(int argc, const char **argv)
       i--;
    }
 
-   sprintf(gameBundleFilename, "%s.app/Contents/Frameworks/%s Bundle.bundle/Contents/MacOS/%s Bundle", appName, appNameNoDebug, appNameNoDebug);
+   sprintf(gameBundleFilename, "%s.app/Contents/Frameworks/%s_Bundle.bundle/Contents/MacOS/%s_Bundle", appName, appNameNoDebug, appNameNoDebug);
 
    // first see if the current directory is set properly
    gameBundle = dlopen(gameBundleFilename, RTLD_LAZY | RTLD_LOCAL);

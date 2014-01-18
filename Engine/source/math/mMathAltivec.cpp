@@ -23,7 +23,7 @@
 // This file is Mac specific.
 #if defined( __APPLE__ )
 
-#include <vecLib/vecLib.h>
+#include <Accelerate/Accelerate.h>
 #include "math/mMathFn.h"
 #include "console/console.h"
 #include "platform/profiler.h"

@@ -249,7 +249,6 @@ class Torque3D
                 {
                     addProjectDefine( '__MACOSX__' );
                     addProjectDependency( getGameProjectName() . '_Bundle' );
-                    addProjectDependency( getGameProjectName() . '_Plugin' );
                 }
 
             endSharedAppConfig();

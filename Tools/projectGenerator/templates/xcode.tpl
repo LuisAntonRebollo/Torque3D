@@ -80,22 +80,22 @@
 [if $type eq 1]
       D[$libuid] /* lib[$def].a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = [$def].dylib; path = ../../game/[$projName]_DEBUG.app/Contents/Frameworks/[$def].dylib; sourceTree = SOURCE_ROOT; };
 [else]
-      D[$libuid] /* lib[$def].a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib[$def].a; path = ../../../../engine/lib/builtLibs/lib[$def].a; sourceTree = SOURCE_ROOT; };
+      D[$libuid] /* lib[$def].a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib[$def].a; path = ../../../../Engine/lib/builtLibs/lib[$def].a; sourceTree = SOURCE_ROOT; };
 [/if]
 [/foreach]
 
 		D26834AB0C02C77B0020EE4F /* [$projName].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "[$projName].app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D21C29DE0CE933AB00670EED /* mainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = mainMenu.nib; path = ../../../../engine/source/platformMac/menus/mainMenu.nib; sourceTree = SOURCE_ROOT; };
+		D21C29DE0CE933AB00670EED /* mainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = mainMenu.nib; path = ../../../../Engine/source/platformMac/menus/mainMenu.nib; sourceTree = SOURCE_ROOT; };
 		D26834AE0C02C77B0020EE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Info.plist"; sourceTree = "<group>"; };
 		D2559B3A0C921A2B0003B62A /* torqueDemo.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = torqueDemo.icns; sourceTree = "<group>"; };
-		D297FD350C05187F00C14A16 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = ../../../../engine/lib/openal/macosx/OpenAL.framework; sourceTree = SOURCE_ROOT; };
+		D297FD350C05187F00C14A16 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = ../../../../Engine/lib/openal/macosx/OpenAL.framework; sourceTree = SOURCE_ROOT; };
 		D29CADE30C88C2C900BBF312 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		D29CADE40C88C2C900BBF312 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		D29CADE50C88C2C900BBF312 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		D29CADE60C88C2C900BBF312 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
-                FAE3ED9D0EEE3A0F0024DCA3 /* resizeNWSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeNWSE.png; path = ../../../../engine/source/platformMac/cursors/resizeNWSE.png; sourceTree = SOURCE_ROOT; };
-		FAE3ED9E0EEE3A0F0024DCA3 /* resizeall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeall.png; path = ../../../../engine/source/platformMac/cursors/resizeall.png; sourceTree = SOURCE_ROOT; };
-		FAE3ED9F0EEE3A0F0024DCA3 /* resizeNESW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeNESW.png; path = ../../../../engine/source/platformMac/cursors/resizeNESW.png; sourceTree = SOURCE_ROOT; };
+                FAE3ED9D0EEE3A0F0024DCA3 /* resizeNWSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeNWSE.png; path = ../../../../Engine/source/platformMac/cursors/resizeNWSE.png; sourceTree = SOURCE_ROOT; };
+		FAE3ED9E0EEE3A0F0024DCA3 /* resizeall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeall.png; path = ../../../../Engine/source/platformMac/cursors/resizeall.png; sourceTree = SOURCE_ROOT; };
+		FAE3ED9F0EEE3A0F0024DCA3 /* resizeNESW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = resizeNESW.png; path = ../../../../Engine/source/platformMac/cursors/resizeNESW.png; sourceTree = SOURCE_ROOT; };
 
    /* Begin PBXFileReferences included by project generator */
       [include file="xcode.filerefs.tpl" dirWalk=$dirWalk ]
@@ -189,7 +189,7 @@
 [/foreach]         
 			);
 			name = builtLibs;
-			path = ../../../../engine/lib/builtLibs;
+			path = ../../../../Engine/lib/builtLibs;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End Generated Dependencies Group */
@@ -369,9 +369,9 @@
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				OTHER_LDFLAGS_i386 = "-framework Accelerate";
 				OTHER_LDFLAGS_ppc = "-framework vecLib";
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-            GCC_VERSION = 4.2;
-				TORQUE_BUILT_LIBS_DIR = ../../../../engine/lib/builtLibs/;
+				SDKROOT = macosx;
+            GCC_VERSION = "";
+				TORQUE_BUILT_LIBS_DIR = ../../../../Engine/lib/builtLibs/;
 			};
 			name = Debug;
 		};
@@ -386,9 +386,9 @@
 				GCC_ENABLE_SSE3_EXTENSIONS = YES;
 				OTHER_LDFLAGS_i386 = "-framework Accelerate";
 				OTHER_LDFLAGS_ppc = "-framework vecLib";
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-            GCC_VERSION = 4.2;
-				TORQUE_BUILT_LIBS_DIR = ../../../../engine/lib/builtLibs/;
+				SDKROOT = macosx;
+            GCC_VERSION = "";
+				TORQUE_BUILT_LIBS_DIR = ../../../../Engine/lib/builtLibs/;
 			};
 			name = Release;
 		};
@@ -401,8 +401,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					../../../../engine/lib/openal/macosx,
-					../../../../engine/lib/xiph/macosx,
+					../../../../Engine/lib/openal/macosx,
+					../../../../Engine/lib/xiph/macosx,
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
                 GCC_ENABLE_CPP_EXCEPTIONS = YES;
@@ -449,8 +449,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					../../../../engine/lib/openal/macosx,
-					../../../../engine/lib/xiph/macosx,
+					../../../../Engine/lib/openal/macosx,
+					../../../../Engine/lib/xiph/macosx,
 				);
                 GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;

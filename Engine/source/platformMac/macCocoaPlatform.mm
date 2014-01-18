@@ -29,6 +29,11 @@
 #include "platform/platformInput.h"
 #include "platform/threads/thread.h"
 
+Platform::ALERT_ASSERT_RESULT Platform::AlertAssert(char const*, char const*)
+{
+    return Platform::ALERT_ASSERT_DEBUG;
+}
+
 #pragma mark ---- Various Directories ----
 //-----------------------------------------------------------------------------
 const char* Platform::getUserDataDirectory() 
@@ -65,9 +70,14 @@ bool Platform::getUserIsAdministrator()
 
 #pragma mark ---- Cosmetic ----
 //-----------------------------------------------------------------------------
-bool Platform::displaySplashWindow()
+bool Platform::displaySplashWindow(String)
 {
     return false;
+}
+
+void Platform::closeSplashWindow()
+{
+
 }
 
 #pragma mark ---- File IO ----

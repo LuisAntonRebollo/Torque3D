@@ -241,7 +241,7 @@ void MacWindow::_initCocoaWindow(const char* windowText, Point2I clientExtent)
    GGMacView* view = [[GGMacView alloc] initWithFrame:contentRect pixelFormat:[NSOpenGLView defaultPixelFormat]];
    [view setTorqueWindow:this];
    [mCocoaWindow setContentView:view];
-   [mCocoaWindow setDelegate:view];
+   [mCocoaWindow setDelegate:static_cast<id<NSWindowDelegate> >(view)];
    
 }
 

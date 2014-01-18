@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 #include "platformMac/platformMacCarb.h"
-#include "platform/menus/popupmenu.h"
+#include "platform/menus/popupMenu.h"
 #include "core/util/safeDelete.h"
 #include "gui/core/guiCanvas.h"
 
@@ -298,9 +298,10 @@ void PopupMenu::checkRadioItem(S32 firstPos, S32 lastPos, S32 checkPos)
 
 bool PopupMenu::isItemChecked(S32 pos)
 {
-   CharParameter mark;
-   GetItemMark(mData->mMenu, pos, &mark);
-   return (mark == checkMark);
+    // TODO OSX need assert
+    short mark; //CharParameter mark;
+    GetItemMark(mData->mMenu, pos, &mark);
+    return mark; //return (mark == checkMark);
 }
 
 //////////////////////////////////////////////////////////////////////////

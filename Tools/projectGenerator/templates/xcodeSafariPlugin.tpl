@@ -121,7 +121,7 @@
 [/foreach]         
 			);
 			name = builtLibs;
-			path = ../../../../engine/lib/builtLibs;
+			path = ../../../../Engine/lib/builtLibs;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End Generated Dependencies Group */
@@ -339,8 +339,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-            GCC_VERSION = 4.2;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+            GCC_VERSION = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -351,8 +351,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-            GCC_VERSION = 4.2;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+            GCC_VERSION = "";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

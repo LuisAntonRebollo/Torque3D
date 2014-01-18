@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 
 #include "windowManager/mac/macView.h"
-#include "platform/event.h"
+#include "platform/input/event.h"
 #include "platform/platformInput.h"
 #include "console/console.h"
 #include "sim/actionMap.h"

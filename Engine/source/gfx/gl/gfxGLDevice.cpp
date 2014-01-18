@@ -109,7 +109,12 @@ void GFXGLDevice::initGLState()
    // to run.  At the time of writing (6/18) it doesn't quite work yet.
    if(Con::getBoolVariable("$pref::machax::enableAdvancedLighting", false) || dAtof(reinterpret_cast<const char*>(glGetString( GL_SHADING_LANGUAGE_VERSION))) >= 3.0f) //TODO OPENGL
       mPixelShaderVersion = 3.0f;
-      
+    
+#if defined(TORQUE_OS_MAC) // TODO OPENL revise GL_SHADING_LANGUAGE_VERSION
+   if(dAtof(reinterpret_cast<const char*>(glGetString( GL_SHADING_LANGUAGE_VERSION))) >= 1.2f)
+        mPixelShaderVersion = 3.0f;
+#endif
+
    mSupportsAnisotropic = mCardProfiler->queryProfile( "GL::suppAnisotropic" );
 
 #if TORQUE_DEBUG
