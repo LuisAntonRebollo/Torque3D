@@ -52,8 +52,6 @@ varying vec4  mieColor;
 #define OUT_mieColor mieColor
 varying vec3  v3Direction;
 #define OUT_v3Direction v3Direction
-varying float zPosition;
-#define OUT_zPosition zPosition
 varying vec3  pos;
 #define OUT_pos pos
  

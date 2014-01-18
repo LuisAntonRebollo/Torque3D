@@ -31,8 +31,6 @@ varying vec4  mieColor;
 #define IN_mieColor mieColor
 varying vec3  v3Direction;
 #define IN_v3Direction v3Direction
-varying float zPosition;
-#define IN_zPosition zPosition
 varying vec3  pos;
 #define IN_pos pos
 
@@ -63,12 +61,6 @@ void main()
    float fac = dot( normalize( pos ), sunDir );
    fac = max( nightInterpAndExposure.y, pow( clamp( fac, 0.0, 1.0 ), 2 ) );
    gl_FragColor = mix( color, nightSkyColor, nightInterpAndExposure.y );
-   
-   // Clip based on the camera-relative
-   // z position of the vertex, passed through
-   // from the vertex position.
-   if(zPosition < 0.0)
-      discard;
 
    gl_FragColor.a = 1;
    gl_FragColor = hdrEncode( gl_FragColor );
